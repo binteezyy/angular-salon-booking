@@ -1,5 +1,8 @@
 # BookingUi
 
+This is a simple salon booking UI created with Angular in partial fulfillment of requirements.
+Consumed endpoints made with django rest framework and JWT.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
 
 ## Development server
