@@ -1,0 +1,57 @@
+<div class="py-1 bg-primary">
+  <div class="container">
+    <div class="row no-gutters">
+      <div class="col-lg-12 d-block">
+        <div class="row">
+          <div
+            class="col-md-6 topper align-items-center justify-content-md-center d-flex"
+          >
+            <span class="mr-2 fas fa-phone"></span>
+            <span class="text">0908 288 0619</span>
+          </div>
+          <div
+            class="col-md-6 topper align-items-center justify-content-md-center d-flex"
+          >
+            <span class="mr-2 fab fa-facebook"></span>
+            <span class="text">fb.com/headway.salon</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav
+  class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
+  id="ftco-navbar"
+>
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">HEADWAY SALON</a>
+
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
+        <li class="nav-item">
+          <a routerLink="/services" class="nav-link">Services</a>
+        </li>
+        <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
+        <li class="nav-item">
+          <a href="contact.php" class="nav-link">Contact</a>
+        </li>
+        <li class="nav-item" *ngIf="!userService.displayUserName">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+        <ng-container *ngIf="userService.displayUserName">
+          <li class="nav-item">
+            <a class="nav-link" href="#"
+              >Signed in as: {{ userService.displayUserName }}</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#" (click)="logout()" class="btn btn-primary">Log Out</a>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+</nav>

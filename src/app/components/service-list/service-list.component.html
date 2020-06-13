@@ -1,0 +1,62 @@
+<!-- <ng-container *ngFor="let service of services; let i = index">
+  <div *ngIf="!(i % 3)" class="card-deck">
+    <div
+      app-service-item
+      class="card"
+      *ngFor="let service of services | slice: i:i + 3"
+      [service]="service"
+      style="width: 18rem;"
+    ></div>
+  </div>
+</ng-container> -->
+
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center mb-3 pb-3">
+      <div class="col-md-12 heading-section text-center">
+        <span class="subheading">Featured Products</span>
+        <h2 class="mb-4">Our Services</h2>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <ng-container *ngFor="let service of services; let i = index">
+      <div class="row" *ngIf="!(i % 4)">
+        <app-service-item
+          *ngFor="let service of services | slice: i:i + 4"
+          [service]="service"
+          class="col-md-6 col-lg-3"
+        ></app-service-item>
+      </div>
+    </ng-container>
+  </div>
+</section>
+
+<!--       <div class="col-md-6 col-lg-3">
+        <div class="product">
+          <img
+            class="img-fluid"
+            src="assets/static/placeholder-img.jpg"
+            onerror='this.src="assets/static/placeholder-img.jpg"'
+            style="height: 25vh;"
+          />
+          <div class="text py-3 pb-4 px-3 text-center">
+            <h3>Nacho Cheese</h3>
+            <div class="d-flex">
+              <div class="pricing">
+                <p class="price"><span>PHP 65</span></p>
+              </div>
+            </div>
+            <div class="bottom-area d-flex px-3">
+              <div class="m-auto d-flex">
+                <a
+                  href="#"
+                  onclick="addToCart(4)"
+                  class="buy-now d-flex justify-content-center align-items-center mx-1"
+                  ><span><i class="ion-ios-cart"></i></span
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->

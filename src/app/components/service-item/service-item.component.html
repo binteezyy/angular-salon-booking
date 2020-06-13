@@ -1,0 +1,42 @@
+<!-- <img
+  class="card-img-top img-fluid rounded"
+  src="assets/static/placeholder-img.jpg"
+  alt="Card image cap"
+  style="height: 25vh; width: 25vh;"
+/>
+<div class="card-body">
+  <h5 class="card-title">{{ service.name }}</h5>
+  <p class="card-text">Description</p>
+  <p class="card-text">
+    <small class="text-muted"> Php {{ service.price | number: "1.2-2" }}</small>
+  </p>
+</div> -->
+
+<div class="product">
+  <img
+    class="img-fluid"
+    src="{{ 'assets/static/' + service.id + '.jpg' }}"
+    onerror='this.src="assets/static/placeholder-img.jpg"'
+    style="height: 25vh; width: 25vh;"
+  />
+  <div class="text py-3 pb-4 px-3 text-center">
+    <h4>{{ service.name }}</h4>
+    <div class="d-flex">
+      <div class="pricing">
+        <p class="price">
+          <span>Php {{ service.price | number: "1.2-2" }}</span>
+        </p>
+      </div>
+    </div>
+    <div class="bottom-area d-flex px-3">
+      <div class="m-auto d-flex">
+        <a
+          href="#"
+          onclick="addToCart(4)"
+          class="buy-now d-flex justify-content-center align-items-center mx-1"
+          ><span><i class="ion-ios-cart"></i></span
+        ></a>
+      </div>
+    </div>
+  </div>
+</div>
