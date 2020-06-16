@@ -11,5 +11,7 @@ export class SchedItemComponent implements OnInit {
   @Input() sched: Sched;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // console.log(typeof this.sched.sched_date);
+  }
 }

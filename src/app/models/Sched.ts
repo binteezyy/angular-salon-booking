@@ -2,6 +2,6 @@ export class Sched {
   id: number;
   user: any;
   service: any;
-  date: string;
-  time: string;
+  sched_date: any;
+  sched_time: any;
 }
