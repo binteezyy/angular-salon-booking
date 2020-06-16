@@ -4,6 +4,8 @@ import { ServiceListComponent } from './components/service-list/service-list.com
 import { HeaderComponent } from './components/layout/header/header.component';
 import { RegisterComponent } from './components/users/register/register.component';
 import { LoginComponent } from './components/users/login/login.component';
+import { ServiceBookingComponent } from './components/service-booking/service-booking.component';
+import { SchedListComponent } from './components/sched-list/sched-list.component';
 
 const routes: Routes = [
   {
@@ -17,6 +19,14 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'booking',
+    component: ServiceBookingComponent,
+  },
+  {
+    path: 'schedules',
+    component: SchedListComponent,
   },
 ];
 

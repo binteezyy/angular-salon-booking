@@ -11,7 +11,7 @@ export class ServiceService {
 
   private serviceUrl: string = 'http://localhost:8000/api/services/';
 
-  getService(): Observable<Service[]> {
+  getServices(): Observable<Service[]> {
     return this.httpClient.get<Service[]>(this.serviceUrl);
   }
 }

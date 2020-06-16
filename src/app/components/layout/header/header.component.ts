@@ -14,4 +14,20 @@ export class HeaderComponent implements OnInit {
   logout() {
     this.userService.logout();
   }
+
+  get userObj() {
+    return JSON.parse(localStorage.getItem('user'));
+  }
+
+  refreshToken() {
+    this.userService.refreshToken().subscribe(
+      (data) => {
+        console.log(data['token']);
+        this.userService.updateData(data['token']);
+      },
+      (err) => {
+        this.userService.errors = err['error'];
+      }
+    );
+  }
 }

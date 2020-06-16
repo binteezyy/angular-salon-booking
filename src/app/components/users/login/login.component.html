@@ -1,4 +1,4 @@
-<div class="register-form container" *ngIf="!userService.token">
+<div class="register-form container" *ngIf="!userObj">
   <form [formGroup]="userLoginForm" (ngSubmit)="login()">
     <h2 class="text-center">Log in</h2>
     <div class="form-group">
@@ -29,21 +29,14 @@
         Please fill out the form.
       </div>
     </div>
-    <div class="clearfix">
+    <!-- <div class="clearfix">
       <label class="pull-left checkbox-inline"
         ><input type="checkbox" /> Remember me</label
       >
       <a href="#" class="pull-right">Forgot Password?</a>
+    </div> -->
+    <div class="text-center">
+      <a routerLink="/register"> Register here </a>
     </div>
   </form>
-</div>
-<div class="container">
-  <div class="col-sm-12">
-    You are logged in as {{ userService.displayUserName }}.<br />
-    Token Expires: {{ userService.token_expires }}<br />
-    <button (click)="refreshToken()" class="btn btn-primary">
-      Refresh Token
-    </button>
-    <button (click)="logout()" class="btn btn-primary">Log Out</button>
-  </div>
 </div>

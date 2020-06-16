@@ -13,7 +13,7 @@
             class="col-md-6 topper align-items-center justify-content-md-center d-flex"
           >
             <span class="mr-2 fab fa-facebook"></span>
-            <span class="text">fb.com/headway.salon</span>
+            <span class="text">www.facebook.com/headwayverasalon</span>
           </div>
         </div>
       </div>
@@ -30,26 +30,30 @@
 
     <div class="collapse navbar-collapse" id="ftco-nav">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
         <li class="nav-item">
           <a routerLink="/services" class="nav-link">Services</a>
         </li>
-        <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
         <li class="nav-item">
-          <a href="contact.php" class="nav-link">Contact</a>
+          <a routerLink="/schedules" class="nav-link">Schedules</a>
         </li>
-        <li class="nav-item" *ngIf="!userService.displayUserName">
+
+        <li class="nav-item" *ngIf="!userObj">
           <a class="nav-link" routerLink="/login">Login</a>
         </li>
-        <ng-container *ngIf="userService.displayUserName">
+        <ng-container *ngIf="userObj">
           <li class="nav-item">
             <a class="nav-link" href="#"
-              >Signed in as: {{ userService.displayUserName }}</a
-            >
+              >Signed in as: {{ userObj[0].username }}
+            </a>
           </li>
           <li class="nav-item">
             <a href="#" (click)="logout()" class="btn btn-primary">Log Out</a>
           </li>
+          <!-- <li class="nav-item">
+            <a href="#" (click)="refreshToken()" class="btn btn-primary"
+              >Refresh</a
+            >
+          </li> -->
         </ng-container>
       </ul>
     </div>

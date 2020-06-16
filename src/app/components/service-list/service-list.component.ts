@@ -12,6 +12,6 @@ export class ServiceListComponent implements OnInit {
   constructor(private serviceService: ServiceService) {}
 
   ngOnInit(): void {
-    this.serviceService.getService().subscribe((ss) => (this.services = ss));
+    this.serviceService.getServices().subscribe((ss) => (this.services = ss));
   }
 }

@@ -1,0 +1,15 @@
+<div class="container">
+  <table class="table text-center">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Customer</th>
+        <th scope="col">Service</th>
+        <th scope="col">Date</th>
+        <th scope="col">Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr app-sched-item *ngFor="let sched of scheds" [sched]="sched"></tr>
+    </tbody>
+  </table>
+</div>

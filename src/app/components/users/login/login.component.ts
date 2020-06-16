@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UserService } from '../../../service/user.service';
 import { Router } from '@angular/router';
+import { User } from 'src/app/models/User';
 
 @Component({
   selector: 'app-login',
@@ -31,26 +32,23 @@ export class LoginComponent implements OnInit {
     }
     this.userService.login(this.userLoginForm.value).subscribe(
       (data) => {
-        console.log('success');
-        console.log(data);
         this.userService.updateData(data['token']);
+
+        this.userService
+          .getUser(this.userLoginForm.controls['username'].value)
+          .subscribe();
+
         this.router.navigate(['/']);
       },
       (err) => {
+        console.log(err);
         this.userService.errors = err['error'];
       }
     );
   }
 
-  refreshToken() {
-    this.userService.refreshToken().subscribe(
-      (data) => {
-        this.userService.updateData(data['token']);
-      },
-      (err) => {
-        this.userService.errors = err['error'];
-      }
-    );
+  get userObj() {
+    return JSON.parse(localStorage.getItem('user'));
   }
 
   logout() {
